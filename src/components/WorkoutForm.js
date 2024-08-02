@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Box } from '@mui/material';
 
-const WorkoutForm = ({ addWorkout }) => {
+const WorkoutForm = ({ addWorkout, editWorkout, workoutToEdit }) => {
   const [workout, setWorkout] = useState({
     name: '',
     date: '',
@@ -9,13 +9,25 @@ const WorkoutForm = ({ addWorkout }) => {
     type: ''
   });
 
+  useEffect(() => {
+    if (workoutToEdit) {
+      setWorkout(workoutToEdit);
+    } else {
+      setWorkout({ name: '', date: '', duration: '', type: '' });
+    }
+  }, [workoutToEdit]);
+
   const handleChange = (e) => {
     setWorkout({ ...workout, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addWorkout(workout);
+    if (workoutToEdit) {
+      editWorkout(workout);
+    } else {
+      addWorkout(workout);
+    }
     setWorkout({ name: '', date: '', duration: '', type: '' });
   };
 
@@ -58,7 +70,9 @@ const WorkoutForm = ({ addWorkout }) => {
         fullWidth
         margin="normal"
       />
-      <Button type="submit" variant="contained" color="primary">Add Workout</Button>
+      <Button type="submit" variant="contained" color="primary">
+        {workoutToEdit ? 'Update Workout' : 'Add Workout'}
+      </Button>
     </Box>
   );
 };
