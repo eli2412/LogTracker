@@ -25,10 +25,10 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm test
+        run: npm run test:ci
 
       - name: Build project
-        run: npm start
+        run: npm run build
 
       - name: Deploy to AWS Amplify
         env:
