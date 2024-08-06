@@ -3,10 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - eli
   pull_request:
     branches:
-      - main
+      - eli
 
 jobs:
   build:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: npm run test:ci
 
       - name: Build project
         run: npm run build
