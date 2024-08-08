@@ -1,9 +1,9 @@
-
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #150c8d, #71a4fc);
     margin: 0;
     padding: 0;
+    color: #333;
   }
   
   .container {
@@ -14,12 +14,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
   }
-  
-  h1 {
-    text-align: center;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto Slab', serif;
     color: #333;
+    text-align: center;
   }
-  
+
   form {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,15 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+    background-color: #f8f9fa;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
   }
   
   button {
@@ -54,7 +64,7 @@ body {
   button:hover {
     background-color: #0056b3;
   }
-  
+
   ul {
     list-style-type: none;
     padding: 0;
@@ -68,6 +78,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   li:nth-child(odd) {
@@ -86,5 +97,24 @@ body {
   
   li button:hover {
     background-color: #c82333;
+  }
+
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    margin-bottom: 30px;
+  }
+  
+  .list-container {
+    margin-top: 30px;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #aaa;
   }
   

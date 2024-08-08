@@ -1,13 +1,10 @@
-// Mock the formidable package
 jest.mock('formidable');
 
-// Import dependencies
 const request = require('supertest');
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
 const cors = require('cors');
 
-// Initialize the app and database
 const app = express();
 const sequelize = new Sequelize({
   dialect: 'sqlite',
@@ -17,7 +14,6 @@ const sequelize = new Sequelize({
 app.use(cors());
 app.use(express.json());
 
-// Define the Workout model
 const Workout = sequelize.define('Workout', {
   name: {
     type: DataTypes.STRING,
@@ -39,7 +35,6 @@ const Workout = sequelize.define('Workout', {
 
 sequelize.sync();
 
-// Define the routes
 app.get('/workouts', async (req, res) => {
   const workouts = await Workout.findAll();
   res.json(workouts);
