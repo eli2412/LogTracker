@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f8f9fa;
@@ -15,13 +15,11 @@ body {
     border-radius: 8px;
   }
   
-  /* Header */
   h1 {
     text-align: center;
     color: #333;
   }
   
-  /* Form Styles */
   form {
     display: flex;
     flex-direction: column;
@@ -57,7 +55,6 @@ body {
     background-color: #0056b3;
   }
   
-  /* List Styles */
   ul {
     list-style-type: none;
     padding: 0;
