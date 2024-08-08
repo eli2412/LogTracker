@@ -3,7 +3,7 @@ import { Container, Typography } from '@mui/material';
 import WorkoutForm from './components/WorkoutForm';
 import WorkoutList from './components/WorkoutList';
 import axios from 'axios';
-import './styles.css';
+import './styles.css';  // Import the CSS file
 
 const App = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -37,11 +37,20 @@ const App = () => {
   };
 
   return (
-    <Container>
-      <Typography variant="h4" gutterBottom>Workout Tracker</Typography>
-      <WorkoutForm addWorkout={addWorkout} editWorkout={editWorkout} workoutToEdit={workoutToEdit} />
-      <WorkoutList workouts={workouts} deleteWorkout={deleteWorkout} setWorkoutToEdit={setWorkoutToEdit} />
-    </Container>
+    <div className="container">
+      <div className="header">
+        <Typography variant="h4" gutterBottom>Workout Tracker</Typography>
+      </div>
+      <div className="form-container">
+        <WorkoutForm addWorkout={addWorkout} editWorkout={editWorkout} workoutToEdit={workoutToEdit} />
+      </div>
+      <div className="list-container">
+        <WorkoutList workouts={workouts} deleteWorkout={deleteWorkout} setWorkoutToEdit={setWorkoutToEdit} />
+      </div>
+      <footer>
+        &copy; {new Date().getFullYear()} Workout Tracker. All rights reserved.
+      </footer>
+    </div>
   );
 };
 
