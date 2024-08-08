@@ -3,7 +3,7 @@ import { Container, Typography } from '@mui/material';
 import WorkoutForm from './components/WorkoutForm';
 import WorkoutList from './components/WorkoutList';
 import axios from 'axios';
-import './styles.css';  // Import the CSS file
+import './styles.css';
 
 const App = () => {
   const [workouts, setWorkouts] = useState([]);

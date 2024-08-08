@@ -1,5 +1,4 @@
 jest.mock('formidable');
-
 const request = require('supertest');
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
@@ -57,7 +56,6 @@ app.delete('/workouts/:id', async (req, res) => {
   res.sendStatus(204);
 });
 
-// Define the test suite
 describe('Workout API', () => {
   it('should return all workouts', async () => {
     const response = await request(app).get('/workouts');
